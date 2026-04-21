@@ -99,7 +99,7 @@ GitHub Pages が更新される
 
 ## 7. 次の作業
 
-- リーダーは [**leader.md**](leader.md)
-- メンバーは [**member.md**](member.md)
+- リーダーは [**leader.md**](leader.md) の内容を確認し、作業をしてください。
+- メンバーは [**member.md**](member.md) の内容を確認し、作業をしてください。
 
 この全体向け資料は、実験の目的と役割分担を確認するためのものです。

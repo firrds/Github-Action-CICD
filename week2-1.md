@@ -114,6 +114,37 @@ npm --version
 
 どちらもバージョン番号が表示されれば成功です。
 
+#### 3.2.4 トラブルシューティング
+```powershell
+npm --version
+```
+を実行した場合、次のようなエラーメッセージが出るかもしれません。
+```powershell
+ npm --version
+npm : このシステムではスクリプトの実行が無効になっているため、ファイル C:\Program Files\nodejs\npm.ps1 を読み込むことが
+できません。詳細については、「about_Execution_Policies」(https://go.microsoft.com/fwlink/?LinkID=135170) を参照してくだ
+さい。
+発生場所 行:1 文字:1
++ npm --version
++ ~~~
+    + CategoryInfo          : セキュリティ エラー: (: ) []、PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+PS C:\WINDOWS\system32>
+```
+これは Node.js / npm の故障ではなく、PowerShell の実行ポリシーが npm.ps1 の実行を止めている エラーです。npm コマンドは PowerShell 上では C:\Program Files\nodejs\npm.ps1 を呼ぶことがあり、その .ps1 実行が禁止されているため PSSecurityException になっています。
+
+### すぐ直す方法
+以下のコマンドをPowerShellで実行してください。
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+```
+新しいターミナルを開き直す
+```powershell
+node --version
+npm --version
+```
+を実行してください。
+
 ### 3.3 Git の確認
 
 PowerShell を開いて、次を実行してください。

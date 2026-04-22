@@ -46,7 +46,7 @@ PowerShell で次を実行します。
 
 ```powershell
 git clone https://github.com/YOUR_ACCOUNT/node-pages-cicd-prtest.git
-cd node-pages-cicd-group-sample
+cd node-pages-cicd-prtest
 ```
 
 ---
